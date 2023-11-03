@@ -11,6 +11,7 @@ const profileRouter = require('./myprofile');
 const addToCart_Router=require('./addToCart');
 const removeFromCart_Router=require('./removeFromCart');
 const showCart_Router=require('./mycart');
+const confirmRouter = require('./confirmOrder')
 // const User_regRouter=require('./User_register');
 // const User_shopRouter=require('./shop_register');
 // const Basic_userRouter=require('./Basic_user');
@@ -56,6 +57,7 @@ router.use('/profile',profileRouter);
 router.use('/addToCart',addToCart_Router);
 router.use('/removeFromCart',removeFromCart_Router);
 router.use('/cart',showCart_Router);
+router.use('/confirm', confirmRouter);
 // router.use('/User_register', User_regRouter);
 // router.use('/shopRegister', User_shopRouter);
 // router.use('/user',verifyAuth, Basic_userRouter);

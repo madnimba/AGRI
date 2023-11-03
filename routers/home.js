@@ -12,7 +12,7 @@ global.products.push(
     {id: '0',
       name: "Organic Tomatoes",
     category: "Fruits & Vegetables",
-    price: "$2.99 per pound",
+    price: "100",
     description: "Fresh, locally grown organic tomatoes. Packed with flavor and essential nutrients. Perfect for salads, sandwiches, or sauces.",
     weight: "1 lb",
     quantity: 6,
@@ -21,6 +21,63 @@ global.products.push(
     certification: "USDA Organic",
     shipping: "Ships within 2 business days",
     SKU: "TOM001"}
+    ,
+    {
+      id: '1',
+      name: "Organic Apples",
+      category: "Fruits & Vegetables",
+      price: "80",
+      description: "Crisp and juicy organic apples from our orchard. Ideal for snacking or making delicious apple pies.",
+      weight: "2 lbs",
+      quantity: 10,
+      incart: '0',
+      origin: "Harvest Grove Orchard",
+      certification: "USDA Organic",
+      shipping: "Ships within 3 business days",
+      SKU: "APL002"
+    },
+    {
+      id: '2',
+      name: "Free-Range Eggs",
+      category: "Dairy & Eggs",
+      price: "5",
+      description: "Farm-fresh free-range eggs from happy, healthy hens. Great for baking and breakfast.",
+      weight: "1 dozen",
+      quantity: 24,
+      incart: '0',
+      origin: "Sunrise Farms",
+      certification: "Cage-Free",
+      shipping: "Ships within 1 business day",
+      SKU: "EGG003"
+    },
+    {
+      id: '3',
+      name: "Organic Spinach",
+      category: "Fruits & Vegetables",
+      price: "4",
+      description: "Nutrient-rich organic spinach leaves, perfect for salads, smoothies, and cooking.",
+      weight: "8 oz",
+      quantity: 15,
+      incart: '0',
+      origin: "Green Acres Farm",
+      certification: "USDA Organic",
+      shipping: "Ships within 2 business days",
+      SKU: "SPN004"
+    },
+    {
+      id: '4',
+      name: "Grass-Fed Beef",
+      category: "Meat & Poultry",
+      price: "15",
+      description: "Tender and lean grass-fed beef cuts for grilling and roasting. Ethically raised and sustainably sourced.",
+      weight: "1 lb",
+      quantity: 5,
+      incart: '0',
+      origin: "Pasture Prime Ranch",
+      certification: "Grass-Fed",
+      shipping: "Ships within 4 business days",
+      SKU: "BEEF005"
+    }
   )
 // const maxAge = 3*24*60*60;
 // const createToken = (id) =>{

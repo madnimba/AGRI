@@ -43,8 +43,8 @@
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
                                             <li><a href="/app/home">Home</a></li>
-                                            <li><a href="/app/job_listing">Find a Job </a></li>
-                                            <li><a href="/app/talent">Find a Talent</a></li>
+                                            <li><a href="/app/talent">Shop </a></li>
+                                            <li><a href="/app/cart">Cart</a></li>
                                             <li><a href="#">About Us</a>
                                                 
                                             </li>
@@ -70,7 +70,7 @@
 <div class="container py-5 ">
     <div class="row text-center text-white">
         <div class="col-lg-8 mx-auto">
-            <p class="tagline"><b>HIRE A TALENT</b></p>
+            <p class="tagline"><b>FRESH AGRO PRODUCT</b></p>
             
         </div>
     </div>
@@ -81,55 +81,35 @@
     <div class="row text-center">
 
         <!-- Team item -->
-        <div class="col-xl-3 col-sm-6 mb-5">
-            <div class=" rounded custom-card py-5 px-4"><img src="/assets/img/products/0.jpg" alt="" width="140" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                <h4 class="mb-2 "><b><%= global.products[0].name %></b></h4>
-                <span class="small mb-2 "><%=global.products[0].category %></span>
-                
-                <h6><span class="mt-8"> <%=global.products[0].price%> </span></h6>
-                <ul class="social mb-0 list-inline mt-3">
-                    <button onclick="redirectToDetails()" class="btn btn-grey"><a href="/app/profile/<%=global.products[0].id%>"><h5 class="btnfont">View Details</h5></a></button>
-                </ul>
-            </div>
-        </div><!-- End -->
-
-        <!-- Team item -->
-        <div class="col-xl-3 col-sm-6 mb-5">
-            <div class=" rounded custom-card py-5 px-4"><img src="/assets/img/logo/2s.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                <h4 class="mb-0"><b>Zarin Rahman</b></h4>
-                <span class="small ">Website Developer(3yrs+)</span>
-                
-                <h6><span class="small "> Rating - 4.8</span></h6>
-                <ul class="social mb-0 list-inline mt-3">
-                    <button onclick="redirectToDetails()" class="btn btn-grey"><a href="/app/profile"><h5 class="btnfont">View Details</h5></a></button>
-                </ul>
-            </div>
-        </div><!-- End -->
-
-        <div class="col-xl-3 col-sm-6 mb-5">
-            <div class=" rounded custom-card py-5 px-4"><img src="/assets/img/logo/3s.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                <h4 class="mb-0"><b>Saiful Islam</b></h4>
-                <span class="small ">Video Editor (2yrs+)</span>
-                
-                <h6><span class="small "> Rating - 4.7</span></h6>
-                <ul class="social mb-0 list-inline mt-3">
-                    <button onclick="redirectToDetails()" class="btn btn-grey"><a href="/app/profile"><h5 class="btnfont">View Details</h5></a></button>
-                </ul>
-            </div>
-        </div><!-- End -->
-
-        <!-- Team item -->
-        <div class="col-xl-3 col-sm-6 mb-5">
-            <div class=" rounded custom-card py-5 px-4"><img src="/assets/img/logo/4s.jpeg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                <h4 class="mb-0"><b>Ahnaf Bin Tarek</b></h4>
-                <span class="small "> Content Writer(1yr+)</span>
-                
-                <h6><span class="small"> Rating - 4.9</span></h6>
-                <ul class="social mb-0 list-inline mt-3">
-                    <button onclick="redirectToDetails()" class="btn btn-grey"><a href="/app/profile/"><h5 class="btnfont">View Details</h5></a></button>
-                </ul>
-            </div>
-        </div><!-- End -->
+        <div class="container">
+            <% for (let i = 0; i < global.products.length; i++) { %>
+              <% if (i % 3 === 0) { %>
+                <div class="row">
+              <% } %>
+          
+              <div class="col-xl-4 col-sm-6 mb-5">
+                <div class="rounded custom-card py-5 px-4">
+                  <img src="/assets/img/products/0.jpg"  alt="<%= global.products[i].name %>" width="140" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                  <h4 class="mb-2"><b><%= global.products[i].name %></b></h4>
+                  <span class="small mb-2"><%= global.products[i].category %></span>
+                  <h6><span class="mt-8"><%= global.products[i].price %></span></h6>
+                  <ul class="social mb-0 list-inline mt-3">
+                    <button onclick="redirectToDetails('<%= global.products[i].id %>')" class="btn btn-grey">
+                      <a href="/app/profile/<%= global.products[i].id %>">
+                        <h5 class="btnfont">View Details</h5>
+                      </a>
+                    </button>
+                  </ul>
+                </div>
+              </div>
+          
+              <% if (i % 3 === 2 || i === global.products.length - 1) { %>
+                </div>
+              <% } %>
+            <% } %>
+          </div>
+          
+     
         <div class="col-xl-3 col-sm-6 mb-5 ">
             <a href="/app/job_listing"><button style="background-color: #1211ca; width: 100%; padding: 15px; font-weight: 800; cursor:pointer">FIND A JOB</button></a>
         </div><!-- End -->
@@ -175,8 +155,9 @@
         <script src="/assets/js/plugins.js"></script>
         <script src="/assets/js/main.js"></script>
         <script>
-            function redirectToDetails() {
-                window.location.href = "/app/profile"; // Redirect to the talent page
+            function redirectToDetails(id) {
+                console.log(id);
+                window.location.href = `/app/profile/${id}`; // Redirect to the talent page
             }
            
         </script>

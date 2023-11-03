@@ -6,7 +6,7 @@ router.get('/',async(req,res)=>{
 
 
       
-    res.render('cart.ejs', { products: global.cart});
+    res.render('cart.ejs', { cproducts: global.cart});
 })
 
 // router.post('/cancelProduct', async(req,res)=>{
