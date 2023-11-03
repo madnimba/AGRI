@@ -4,8 +4,6 @@ const express = require('express');
 const router = express.Router({mergeParams : true});
 
 const loginRouter=require('./home');
-const jobListingRouter = require('./joblisting');
-const jobDetailsRouter = require('./jobdetails');
 const talentRouter = require('./talent');
 const profileRouter = require('./myprofile');
 const addToCart_Router=require('./addToCart');
@@ -50,8 +48,6 @@ const confirmRouter = require('./confirmOrder')
 // if you only use verifyAuth, in each router you can access the id by req.user.id
 
 router.use('/home',loginRouter);
-router.use('/job_listing', jobListingRouter);
-router.use('/job_details', jobDetailsRouter);
 router.use('/talent',talentRouter);
 router.use('/profile',profileRouter);
 router.use('/addToCart',addToCart_Router);

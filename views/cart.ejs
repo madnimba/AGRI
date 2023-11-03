@@ -115,9 +115,9 @@
 
                                     <% for (let j=0;j<cproducts.length;j++) { %>
                                         <div class="row productRow justify-content-between">
-                                          <div class="col-auto col-md-7">
+                                          <div class="col-auto col-md-6" style="font-size: small;">
                                             <div class="media flex-column flex-sm-row">
-                                              <img class="img-fluid" src="https://i.imgur.com/6oHix28.jpg" width="62" height="62">
+                                              <img class="img-fluid" src="https://i.imgur.com/6oHix28.jpg" width="50" height="50">
                                               <div class="media-body my-auto">
                                                 <div class="row">
                                                   <div class="col-auto">
@@ -128,19 +128,19 @@
                                               </div>
                                             </div>
                                           </div>
-                                        <div class="pl-0 d-flex flex-sm-col col-auto my-auto">
+                                        <div class="pl-0 d-flex flex-sm-col col-auto my-auto align-items-center">
                                             <!-- <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                                                                                         
                                                                                         <input  min="1"  name="quantity"  type="number" class="form-control form-control-sm" />
                                                                                         
                                                                                       </div> -->
-                                            <button class="btn btn-link px-2" onclick="decrementQuantity(this)" style="width: 30px; height: 24px;  margin: 10px;">
-                                                         <i class="fas fa-minus mb-5"  ></i>
+                                            <button class="btn btn-link" onclick="decrementQuantity(this)" style="width: 10px; height: 20px; padding-left: -5px; margin-right: 5px; font-size: 0.5rem;">
+                                                         <i class="fas fa-minus "  ></i>
                                             </button>
                                                                                     
-                                            <input id="quantity_<%= j %>" min="1" max="<%= cproducts[j].quantity%>" name="quantity" value="<%=cproducts[j].incart%>" type="number" class="form-control-sm boxed-1" style="width: 40px; height: 50px;"/>
+                                            <input id="quantity_<%= j %>" min="1" max="<%= cproducts[j].quantity%>" name="quantity" value="<%=cproducts[j].incart%>" type="number" class="form-control-sm boxed-1" style="width: 30px; height: 40px;"/>
                                             
-                                            <button class="btn btn-link px-2" id="inc_amount" onclick="incrementQuantity(this)" style="width: 30px; height: 24px;  margin: 10px;">
+                                            <button class="btn btn-link " id="inc_amount" onclick="incrementQuantity(this)" style="width: 15px; height: 20px; margin-left: 5px; font-size: 0.5rem;">
                                                 <i class="fas fa-plus mb-5"></i>
                                             </button>
                                         </div>
@@ -460,38 +460,6 @@ function updatePrice(productId) {
 
 
 
-// const confirmationCard = document.getElementById("confirmation-card");
-// const confirmOrderButton = document.getElementById("confirmOrderBtn");
-
-// confirmOrderButton.addEventListener("click", async function () {
-//   // Show the confirmation card
-//   confirmationCard.style.display = "block";
-
-//   setTimeout(() => {
-//     // Hide the confirmation card after 3 seconds
-//     confirmationCard.style.display = "none";
-
-//     // Fetch the /app/confirm route
-//     fetch('/app/confirm',{method: 'GET'})
-    
-//       .then(response => {
-//         if (response.ok) {
-//           return response.json();
-//         }
-//         throw new Error('Network response was not ok.');
-//       })
-//       .then(data => {
-//         // Handle the response data as needed
-//         console.log(data);
-//       })
-//       .catch(error => {
-//         // Handle errors
-//         console.error('Fetch error:', error);
-//       });
-//   }, 3000); // 3 seconds
-// });
-
-
 
 
 
@@ -684,7 +652,7 @@ a:focus,a:active {
 }
 
 .btn-group-lg>.btn, .btn-lg {
-    padding: .5rem 0.1rem;
+    
     font-size: 1rem;
     border-radius: 0;
     color: white !important;
